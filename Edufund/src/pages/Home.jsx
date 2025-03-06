@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BookOpen, Users, CreditCard, HandHelping } from "lucide-react";
 import Edu from "../assets/Edu.png";
+import Footer from "../components/Footer";
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState("donors");
@@ -79,6 +80,9 @@ const LandingPage = () => {
           </div>
         </div>
       </motion.div>
+      <br />
+      <br />
+      <br /><br />
 
       {/* Rest of the component remains the same as the original */}
       {/* Interactive Tabs Section */}
@@ -143,6 +147,7 @@ const LandingPage = () => {
                 </ul>
               </div>
             </div>
+            <br />
             <div className="flex justify-center space-x-4">
               <button className="border border-blue-600 text-blue-600 font-mono px-4 py-3 rounded-full hover:bg-blue-300 hover:text-black hover:border-black cursor-pointer transition">
                 Continue {"->"}
@@ -152,47 +157,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* How It Works Section */}
-      <div className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            How EduFund Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <HowItWorksStep
-              number="1"
-              title="Create Profile"
-              description="Students and donors create secure profiles on our platform."
-            />
-            <HowItWorksStep
-              number="2"
-              title="Connect & Verify"
-              description="Blockchain technology ensures transparency and trust."
-            />
-            <HowItWorksStep
-              number="3"
-              title="Support & Grow"
-              description="Direct donations empower students' educational journeys."
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="bg-blue-600 text-white py-16 text-center">
-        <h2 className="text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
-        <p className="text-xl mb-8">
-          Join EduFund and be part of a community transforming education
-        </p>
-        <div className="space-x-4">
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition">
-            Donate Now
-          </button>
-          <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition">
-            Learn More
-          </button>
-        </div>
-      </div>
+      <Footer/>
     </div>
   );
 };
