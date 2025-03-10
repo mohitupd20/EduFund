@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { BookOpen, Users, CreditCard, HandHelping } from "lucide-react";
 import Edu from "../assets/Edu.png";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState("donors");
@@ -61,7 +63,7 @@ const LandingPage = () => {
           <img
             src={Edu}
             alt="Example Image"
-            class="w-auto h-full  object-cover rounded-lg"
+            className="w-auto h-full  object-cover rounded-lg"
           />
         </div>
 
@@ -82,7 +84,8 @@ const LandingPage = () => {
       </motion.div>
       <br />
       <br />
-      <br /><br />
+      <br />
+      <br />
 
       {/* Rest of the component remains the same as the original */}
       {/* Interactive Tabs Section */}
@@ -149,15 +152,22 @@ const LandingPage = () => {
             </div>
             <br />
             <div className="flex justify-center space-x-4">
-              <button className="border border-blue-600 text-blue-600 font-mono px-4 py-3 rounded-full hover:bg-blue-300 hover:text-black hover:border-black cursor-pointer transition">
+              <Link
+                to={
+                  activeTab === "students"
+                    ? "/student-register"
+                    : "/donor-register"
+                }
+                className="border border-blue-600 text-blue-600 font-mono px-4 py-3 rounded-full hover:bg-blue-300 hover:text-black hover:border-black cursor-pointer transition"
+              >
                 Continue {"->"}
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };
